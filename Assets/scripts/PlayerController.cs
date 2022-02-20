@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private CapsuleCollider col;
     private Animator anim;
-    //private Score score;
+    private Score score;
     private Vector3 dir;
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject scoreText;
     [SerializeField] private Text coinsText;
-   // [SerializeField] private Score scoreScript;
+    [SerializeField] private Score Score;
+    [SerializeField] private Text maxScore;
 
     private bool isSliding;
     private bool isImmortal;
@@ -31,8 +32,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
         col = GetComponent<CapsuleCollider>();
-        //score = scoreText.GetComponent<Score>();
-        //score.scoreMultiplier = 1;
+        score = scoreText.GetComponent<Score>();
         Time.timeScale = 1;
         coins = PlayerPrefs.GetInt("coins");
         coinsText.text = coins.ToString();
@@ -123,10 +123,12 @@ public class PlayerController : MonoBehaviour
                 Destroy(hit.gameObject);
             else
             {
-                losePanel.SetActive(true);
-              //  int lastRunScore = int.Parse(scoreScript.scoreText.text.ToString());
-               // PlayerPrefs.SetInt("lastRunScore", lastRunScore);
+                int lastRunScore = int.Parse(Score.scoreText.text.ToString());
+                PlayerPrefs.SetInt("lastRunScore", lastRunScore);
+                losePanel.SetActive(true); 
                 Time.timeScale = 0;
+                
+
             }
         }
     }
@@ -137,7 +139,7 @@ public class PlayerController : MonoBehaviour
         {
             coins++;
             PlayerPrefs.SetInt("coins", coins);
-            coinsText.text = coins.ToString();
+            coinsText.text = "Money: " + coins.ToString();
             Destroy(other.gameObject);
         }
 
