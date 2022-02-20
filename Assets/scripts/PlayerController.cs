@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour
     private int lineToMove = 1;
     public float lineDistance = 4;
     private float maxSpeed = 110;
-
     void Start()
     {
         anim = GetComponentInChildren<Animator>();
@@ -168,21 +167,26 @@ public class PlayerController : MonoBehaviour
     private IEnumerator Slide()
     {
         gravity = -150;
-        col.center = new Vector3(0, -0, 5f);
+        col.center = new Vector3(0, 1, 0f);
         col.height = 2;
+        controller.center = new Vector3(0, 1, 0f);
+        controller.height = 2;
         isSliding = true;
         anim.SetBool("isRunning", false);
         anim.SetTrigger("isSliding");
         anim.SetTrigger("slide");
+
         anim.SetBool("slider", true);
         yield return new WaitForSeconds(1);
         anim.SetBool("slider", false);
 
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2/3);
 
-        col.center = new Vector3(0, 0.108f, 0);
-        col.height = 4.420422f;
+        col.center = new Vector3(0, 1.48452f, 0);
+        col.height = 3  ;
+        controller.center = new Vector3(0, 1.48452f, 0);
+        controller.height = 3;
         isSliding = false;
     }
 
