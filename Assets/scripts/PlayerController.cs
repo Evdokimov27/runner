@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         score = scoreText.GetComponent<Score>();
         Time.timeScale = 1;
         coins = PlayerPrefs.GetInt("coins");
-        coinsText.text = coins.ToString();
+        coinsText.text = "Money: " + coins.ToString();
         StartCoroutine(SpeedIncrease());
         isImmortal = false;
     }
