@@ -43,7 +43,8 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        
+
+
         if (SwipeController.swipeRight)
         {
             if (lineToMove < 2)
@@ -59,7 +60,7 @@ public class PlayerController : MonoBehaviour
         if (SwipeController.swipeUp)
         {
             if (controller.isGrounded)
-                Jump();
+                StartCoroutine(Jump());
         }
 
         if (SwipeController.swipeDown)
@@ -97,11 +98,15 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void Jump()
+    private IEnumerator Jump()
     {
+        gravity = -50;
         dir.y = jumpForce;
         anim.SetTrigger("isJumping");
         anim.SetTrigger("jump");
+        anim.SetBool("jumper", true);
+        yield return new WaitForSeconds(1);
+        anim.SetBool("jumper", false);
     }
 
     void FixedUpdate()
@@ -162,12 +167,16 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Slide()
     {
+        gravity = -150;
         col.center = new Vector3(0, -0, 5f);
         col.height = 2;
         isSliding = true;
         anim.SetBool("isRunning", false);
         anim.SetTrigger("isSliding");
         anim.SetTrigger("slide");
+        anim.SetBool("slider", true);
+        yield return new WaitForSeconds(1);
+        anim.SetBool("slider", false);
 
 
         yield return new WaitForSeconds(1);
