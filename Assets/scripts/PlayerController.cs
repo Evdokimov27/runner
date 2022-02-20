@@ -169,9 +169,9 @@ public class PlayerController : MonoBehaviour
     private IEnumerator Slide()
     {
         gravity = -150;
-        col.center = new Vector3(0, 1, 0f);
+        col.center = new Vector3(0, 3, 0f);
         col.height = 2;
-        controller.center = new Vector3(0, 1, 0f);
+        controller.center = new Vector3(0, 3, 0f);
         controller.height = 2;
         isSliding = true;
         anim.SetBool("isRunning", false);
@@ -185,10 +185,10 @@ public class PlayerController : MonoBehaviour
 
         yield return new WaitForSeconds(2/3);
 
-        col.center = new Vector3(0, 1.48452f, 0);
-        col.height = 3  ;
-        controller.center = new Vector3(0, 1.48452f, 0);
-        controller.height = 3;
+        col.center = new Vector3(0, 3, 0);
+        col.height = 6;
+        controller.center = new Vector3(0, 3, 0);
+        controller.height = 6;
         isSliding = false;
     }
 

@@ -3,7 +3,12 @@ guid: 3ec7e1bc57140eb429296f38f76fc4f8
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: AtariMachine_
+    second: {fileID: 2100000, guid: 23630097bfeced34b8a2d3780d640d3e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
