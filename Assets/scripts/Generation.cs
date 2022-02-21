@@ -25,7 +25,7 @@ public class Generation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.position.z - 60 > spawnPos - (startTiles * tileLength))
+        if (player.position.z - 150 > spawnPos - (startTiles * tileLength))
         {
             SpawnTile(Random.Range(0, tilePrefabs.Length));
             DeleteTile();
