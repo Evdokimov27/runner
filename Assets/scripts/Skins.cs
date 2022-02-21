@@ -17,18 +17,21 @@ public class Skins : MonoBehaviour
         void Start()
         {
 
-          
-
-
-            model.transform.SetParent(Player.transform);
-            model.transform.localPosition = new Vector3(0, 0, 0);
+         
         }
 
 
         // Update is called once per frame
         void Update()
         {
+            if (skin1.activeSelf)
+            {
+                Player.GetComponent<Animator>().avatar = _skin1;
+            }
 
+
+            model.transform.SetParent(Player.transform);
+            model.transform.localPosition = new Vector3(0, 0, 0);
         }
 
     }
