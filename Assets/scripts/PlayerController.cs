@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Text coinsText;
     [SerializeField] private Score Score;
     [SerializeField] private Text maxScore;
+    [SerializeField] private GameObject Player;
 
     private bool isSliding;
     private bool isImmortal;
@@ -107,6 +108,7 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("jumper", true);
         yield return new WaitForSeconds(1);
         anim.SetBool("jumper", false);
+        Player.GetComponent<Animator>().Rebind();
     }
 
     void FixedUpdate()
