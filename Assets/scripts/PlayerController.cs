@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             if (controller.isGrounded)
                 StartCoroutine(Jump());
+
         }
 
         if (SwipeController.swipeDown)
@@ -165,14 +166,14 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(SpeedIncrease());
         }
     }
-
+    
     private IEnumerator Slide()
     {
         gravity = -150;
-        col.center = new Vector3(0, 3, 0f);
-        col.height = 2;
-        controller.center = new Vector3(0, 3, 0f);
-        controller.height = 2;
+        col.center = new Vector3(0, 3f, 0f);
+        col.height = 4;
+        controller.center = new Vector3(0, 3f , 0f);
+        controller.height = 4;
         isSliding = true;
         anim.SetBool("isRunning", false);
         anim.SetTrigger("isSliding");
@@ -181,6 +182,7 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("slider", true);
         yield return new WaitForSeconds(1);
         anim.SetBool("slider", false);
+        
 
 
         yield return new WaitForSeconds(2/3);
