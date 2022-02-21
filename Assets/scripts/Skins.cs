@@ -4,10 +4,10 @@ using System.Collections;
 public class Skins : MonoBehaviour
 {
     Animator avatar;
-    public GameObject _skin1;
-    public GameObject _skin2;
     public Avatar skin1;
     public Avatar skin2;
+    public Avatar skin3;
+    public Avatar skin4;
     [SerializeField] public GameObject Player;
 
     GameObject model;
@@ -24,6 +24,16 @@ public class Skins : MonoBehaviour
         {
             avatar = GetComponent<Animator>();
             avatar.avatar = skin2 as Avatar;
+        }
+        if (skin == 2)
+        {
+            avatar = GetComponent<Animator>();
+            avatar.avatar = skin3 as Avatar;
+        }
+        if (skin == 3)
+        {
+            avatar = GetComponent<Animator>();
+            avatar.avatar = skin4 as Avatar;
         }
 
         // Update is called once per frame
