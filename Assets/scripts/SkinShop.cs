@@ -11,9 +11,9 @@ public class SkinShop : MonoBehaviour
     public Button buyBttn;
     public Text priceText;
     public Text coinsText;
-    public Text nomber;
     public Transform player;
     public static int index;
+
 
     public int coins;
 
@@ -37,7 +37,11 @@ public class SkinShop : MonoBehaviour
         {
             info[i].inStock = StockCheck[i];
             if (i == index)
+            {
+                PlayerPrefs.SetInt("skin", i);
                 player.GetChild(i).gameObject.SetActive(true);
+              
+            }
             else
                 player.GetChild(i).gameObject.SetActive(false);
         }

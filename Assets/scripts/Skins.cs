@@ -3,36 +3,32 @@ using System.Collections;
 
 public class Skins : MonoBehaviour
 {
-    public GameObject skin1;
-    public Avatar _skin1;
-    public GameObject skin2;
-    public Avatar _skin2;
-    public GameObject Player;
+    Animator avatar;
+    public GameObject _skin1;
+    public GameObject _skin2;
+    public Avatar skin1;
+    public Avatar skin2;
+    [SerializeField] public GameObject Player;
 
     GameObject model;
     // Use this for initialization
     private void Awake()
     {
-
-        void Start()
+        int skin = PlayerPrefs.GetInt("skin");
+        if (skin == 0)
         {
-
-         
+            avatar = GetComponent<Animator>();
+            avatar.avatar = skin1 as Avatar;
         }
-
+        if (skin == 1)
+        {
+            avatar = GetComponent<Animator>();
+            avatar.avatar = skin2 as Avatar;
+        }
 
         // Update is called once per frame
-        void Update()
-        {
-            if (skin1.activeSelf)
-            {
-                Player.GetComponent<Animator>().avatar = _skin1;
-            }
 
 
-            model.transform.SetParent(Player.transform);
-            model.transform.localPosition = new Vector3(0, 0, 0);
-        }
 
     }
 }
