@@ -130,7 +130,7 @@ public class SkinShop : MonoBehaviour
     {
         if (buyBttn.interactable && !info[index].inStock)
         {
-            if (coins > int.Parse(priceText.text))
+            if (coins >= int.Parse(priceText.text))
             {
                 close.SetActive(false);
                 coins -= int.Parse(priceText.text);
