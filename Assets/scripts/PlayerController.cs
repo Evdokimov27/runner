@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
         score = scoreText.GetComponent<Score>();
         Time.timeScale = 1;
         coins = PlayerPrefs.GetInt("coins");
-        coinsText.text = "Money: " + coins.ToString();
+        coinsText.text = coins.ToString();
         StartCoroutine(SpeedIncrease());
         isImmortal = false;
     }
@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
         {
             coins++;
             PlayerPrefs.SetInt("coins", coins);
-            coinsText.text = "Money: " + coins.ToString();
+            coinsText.text = coins.ToString();
             Destroy(other.gameObject);
         }
 

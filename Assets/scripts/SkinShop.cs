@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SkinShop : MonoBehaviour
 {
     public Skin[] info;
     private bool[] StockCheck;
+    [SerializeField] private GameObject close;
 
     public Button buyBttn;
     public Text priceText;
@@ -16,6 +18,9 @@ public class SkinShop : MonoBehaviour
 
 
     public int coins;
+
+
+
 
     private void Awake()
     {
@@ -40,13 +45,14 @@ public class SkinShop : MonoBehaviour
             {
                 PlayerPrefs.SetInt("skin", i);
                 player.GetChild(i).gameObject.SetActive(true);
-              
+                close.SetActive(false);
+
             }
             else
                 player.GetChild(i).gameObject.SetActive(false);
         }
 
-        priceText.text = "CHOSEN";
+        priceText.text = "¬€¡–¿Õ";
         buyBttn.interactable = false;
     }
 
@@ -62,18 +68,21 @@ public class SkinShop : MonoBehaviour
             index++;
             if (info[index].inStock && info[index].isChosen)
             {
-                priceText.text = "CHOSEN";
+                priceText.text = "¬€¡–¿Õ";
                 buyBttn.interactable = false;
+                close.SetActive(false);
             }
             else if (!info[index].inStock)
             {
                 priceText.text = info[index].cost.ToString();
                 buyBttn.interactable = true;
+                close.SetActive(true);
             }
             else if (info[index].inStock && !info[index].isChosen)
             {
-                priceText.text = "CHOOSE";
+                priceText.text = "¬€¡–¿“‹";
                 buyBttn.interactable = true;
+                close.SetActive(false);
             }
 
             for (int i = 0; i < player.childCount; i++)
@@ -92,18 +101,22 @@ public class SkinShop : MonoBehaviour
 
             if (info[index].inStock && info[index].isChosen)
             {
-                priceText.text = "CHOSEN";
+                priceText.text = "¬€¡–¿Õ";
                 buyBttn.interactable = false;
+                close.SetActive(false);
             }
             else if (!info[index].inStock)
             {
                 priceText.text = info[index].cost.ToString();
                 buyBttn.interactable = true;
+                close.SetActive(true);
+
             }
             else if (info[index].inStock && !info[index].isChosen)
             {
-                priceText.text = "CHOOSE";
+                priceText.text = "¬€¡–¿“‹";
                 buyBttn.interactable = true;
+                close.SetActive(false);
             }
 
             for (int i = 0; i < player.childCount; i++)
@@ -119,23 +132,31 @@ public class SkinShop : MonoBehaviour
         {
             if (coins > int.Parse(priceText.text))
             {
+                close.SetActive(false);
                 coins -= int.Parse(priceText.text);
                 coinsText.text = coins.ToString();
                 PlayerPrefs.SetInt("coins", coins);
                 StockCheck[index] = true;
                 info[index].inStock = true;
-                priceText.text = "CHOOSE";
+                priceText.text = "¬€¡–¿“‹";
                 Save();
             }
         }
 
         if (buyBttn.interactable && !info[index].isChosen && info[index].inStock)
         {
+            close.SetActive(false);
             PlayerPrefs.SetInt("chosenSkin", index);
             buyBttn.interactable = false;
-            priceText.text = "CHOSEN";
+            priceText.text = "¬€¡–¿Õ";
+            RestartLevel();
         }
     }
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(0);
+    }
+
 }
 
 

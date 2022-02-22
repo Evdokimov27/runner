@@ -7,8 +7,10 @@ public class Menu : MonoBehaviour
 {
 
     [SerializeField] private GameObject GameMenu;
+    [SerializeField] private GameObject Shop;
     [SerializeField] private GameObject UI;
     [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject CameraMenu;
     [SerializeField] private Text coinsText;
     [SerializeField] private int coins;
 
@@ -20,19 +22,32 @@ public class Menu : MonoBehaviour
     public void Play()
     {
         coins = PlayerPrefs.GetInt("coins");
-        coinsText.text = coins.ToString(); 
+        coinsText.text = coins.ToString();
+        CameraMenu.SetActive(false);
         GameMenu.SetActive(false);
         Player.SetActive(true);
         UI.SetActive(true);
     }
-    public void Shop()
+    public void SkinShop()
     {
-        GameMenu.SetActive(true);
-        UI.SetActive(false);
+        coins = PlayerPrefs.GetInt("coins");
+        coinsText.text = coins.ToString();
+        GameMenu.SetActive(false);
+        Shop.SetActive(true);
+
+    
         
+    }
+    public void goMenu()
+    {
+        coins = PlayerPrefs.GetInt("coins");
+        coinsText.text = coins.ToString();
+        GameMenu.SetActive(true);
+        Shop.SetActive(false);
 
 
     }
+
     // Update is called once per frame
     void Update()
     {
