@@ -8,6 +8,7 @@ public class Menu : MonoBehaviour
 
     [SerializeField] private GameObject GameMenu;
     [SerializeField] private GameObject Shop;
+    [SerializeField] private GameObject Rewards;
     [SerializeField] private GameObject UI;
     [SerializeField] private GameObject Player;
     [SerializeField] private GameObject CameraMenu;
@@ -47,6 +48,16 @@ public class Menu : MonoBehaviour
 
 
     }
+    public void DailyReward()
+    {
+        coins = PlayerPrefs.GetInt("coins");
+        GameMenu.SetActive(false);
+        Rewards.SetActive(true);
+
+
+
+    }
+
 
     // Update is called once per frame
     void Update()
