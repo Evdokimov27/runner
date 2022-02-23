@@ -7,7 +7,7 @@ public class Generation : MonoBehaviour
     public GameObject[] tilePrefabs;
     private List<GameObject> activeTiles = new List<GameObject>();
     private float spawnPos = 0;
-    private float tileLength = 225;
+    private float tileLength = 253;
 
 
     [SerializeField] private Transform player;
