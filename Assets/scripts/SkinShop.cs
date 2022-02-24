@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class SkinShop : MonoBehaviour
 {
     public Skin[] info;
-    private bool[] StockCheck;
+    public bool[] StockCheck;
     [SerializeField] private GameObject close;
 
     public Button buyBttn;
