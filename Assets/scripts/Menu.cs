@@ -39,6 +39,10 @@ public class Menu : MonoBehaviour
     
         
     }
+    public void deleteAll()
+    {
+        PlayerPrefs.DeleteAll();
+    }
     public void goMenu()
     {
         coins = PlayerPrefs.GetInt("coins");

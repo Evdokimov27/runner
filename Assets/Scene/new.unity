@@ -12157,19 +12157,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info:
+  - cost: 100
+    inStock: 0
+    isChosen: 0
+    dailyReward: 0
+  - cost: 500
+    inStock: 0
+    isChosen: 0
+    dailyReward: 0
+  - cost: 1000
+    inStock: 0
+    isChosen: 0
+    dailyReward: 0
   - cost: 0
     inStock: 0
     isChosen: 0
-  - cost: 5
-    inStock: 0
-    isChosen: 0
-  - cost: 10
-    inStock: 0
-    isChosen: 0
-  - cost: -1
-    inStock: 0
-    isChosen: 0
-  StockCheck: 
+    dailyReward: 1
   close: {fileID: 1464522717}
   buyBttn: {fileID: 1755479233}
   priceText: {fileID: 1281458632}
@@ -16897,8 +16900,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a7a733c1f5867e4b970bcd8547301bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  info: []
-  StockCheck: 
+  info:
+  - cost: 0
+    inStock: 0
+    isChosen: 0
+    dailyReward: 0
+  - cost: 0
+    inStock: 0
+    isChosen: 0
+    dailyReward: 0
+  - cost: 0
+    inStock: 0
+    isChosen: 0
+    dailyReward: 0
+  - cost: 0
+    inStock: 0
+    isChosen: 0
+    dailyReward: 0
   close: {fileID: 0}
   buyBttn: {fileID: 0}
   priceText: {fileID: 0}
@@ -31711,16 +31729,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   info:
-  - cost: 5
+  - cost: 0
     inStock: 0
     isChosen: 0
-  - cost: 10
+    dailyReward: 0
+  - cost: 0
     inStock: 0
     isChosen: 0
-  - cost: 15
+    dailyReward: 0
+  - cost: 0
     inStock: 0
     isChosen: 0
-  StockCheck: 
+    dailyReward: 0
+  - cost: 0
+    inStock: 0
+    isChosen: 0
+    dailyReward: 0
   close: {fileID: 1464522717}
   buyBttn: {fileID: 1755479233}
   priceText: {fileID: 1281458632}
@@ -31742,7 +31766,7 @@ MonoBehaviour:
   skin1: {fileID: 9000000, guid: 52b5ba3bdf9fb0646a23e4cd61c6d095, type: 3}
   skin2: {fileID: 9000000, guid: 338ee7f8334f7384f93d691c1322e75e, type: 3}
   skin3: {fileID: 9000000, guid: e74b1fa14832c1d4cac9aebab2d7f352, type: 3}
-  skin4: {fileID: 0}
+  skin4: {fileID: 9000000, guid: e74b1fa14832c1d4cac9aebab2d7f352, type: 3}
   Player: {fileID: 604284926}
 --- !u!95 &604284930
 Animator:
@@ -46472,16 +46496,19 @@ MonoBehaviour:
   - cost: 0
     inStock: 0
     isChosen: 0
+    dailyReward: 0
   - cost: 0
     inStock: 0
     isChosen: 0
+    dailyReward: 0
   - cost: 0
     inStock: 0
     isChosen: 0
+    dailyReward: 0
   - cost: 0
     inStock: 0
     isChosen: 0
-  StockCheck: 
+    dailyReward: 0
   close: {fileID: 1464522717}
   buyBttn: {fileID: 1755479233}
   priceText: {fileID: 1281458632}
@@ -46503,7 +46530,7 @@ MonoBehaviour:
   skin1: {fileID: 9000000, guid: 52b5ba3bdf9fb0646a23e4cd61c6d095, type: 3}
   skin2: {fileID: 9000000, guid: 338ee7f8334f7384f93d691c1322e75e, type: 3}
   skin3: {fileID: 9000000, guid: e74b1fa14832c1d4cac9aebab2d7f352, type: 3}
-  skin4: {fileID: 0}
+  skin4: {fileID: 9000000, guid: e74b1fa14832c1d4cac9aebab2d7f352, type: 3}
   Player: {fileID: 921651374}
 --- !u!1001 &922007309
 PrefabInstance:
@@ -69755,9 +69782,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feae0c6e1d8d6ea43afb5009174e4945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  msToWait: 10000
+  msToWait: 1000
   day: 1
-  coins: 7579
+  coins: 0
   streak: 1
   coinsText: {fileID: 504691313}
   rewardButton: {fileID: 2069138187}
@@ -69765,7 +69792,7 @@ MonoBehaviour:
   dotn_claim: {fileID: 21300016, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   now_claim: {fileID: 21300048, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   rewards: {fileID: 1329234158}
-  skinShop: {fileID: 229204233}
+  skin_reward: {fileID: 0}
 --- !u!4 &1415329201
 Transform:
   m_ObjectHideFlags: 0
@@ -80530,18 +80557,18 @@ PrefabInstance:
     - target: {fileID: 2689477181902755943, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300014, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
+      objectReference: {fileID: 21300048, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
     - target: {fileID: 2689477181902755943, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_Color.b
-      value: 0.05233179
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755943, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_Color.g
-      value: 0.5283019
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755943, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_Color.r
-      value: 0.117661044
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755943, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_Enabled
@@ -85999,7 +86026,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1752897144}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 285955877}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: deleteAll
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1752897144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91511,6 +91550,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1415329200}
         m_TargetAssemblyTypeName: Reward, Assembly-CSharp
         m_MethodName: UI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 229204234}
+        m_TargetAssemblyTypeName: SkinShop, Assembly-CSharp
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -100197,6 +100248,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1415329200}
         m_TargetAssemblyTypeName: Reward, Assembly-CSharp
         m_MethodName: Click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 229204234}
+        m_TargetAssemblyTypeName: SkinShop, Assembly-CSharp
+        m_MethodName: RewardSkin
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
