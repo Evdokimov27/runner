@@ -5,7 +5,7 @@ using UnityEngine;
 public class Reward : MonoBehaviour
 {
     public float msToWait = 0f;
-    private Text Timer;
+    public  Text Timer;
     private ulong lastOpen = ((ulong)1);
     public int day;
     public int coins;
@@ -28,7 +28,6 @@ public class Reward : MonoBehaviour
         day = 0;
         
         
-        Timer = GetComponentInChildren<Text>();
         coins = PlayerPrefs.GetInt("coins");
         diamond = PlayerPrefs.GetInt("diamond");
         day = PlayerPrefs.GetInt("day");

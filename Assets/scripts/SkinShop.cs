@@ -258,8 +258,21 @@ public class SkinShop : MonoBehaviour
     }
     public void BuyButtonAction()
     {
-       
-        if (buyBttn.interactable && !info[index].inStock)
+        if (buyBttn.interactable && !info[index].inStock && info[index].sell_diamond)
+        {
+            if (diamond >= int.Parse(priceText.text))
+            {
+                close.SetActive(false);
+                diamond -= int.Parse(priceText.text);
+                coinsText.text = coins.ToString();
+                PlayerPrefs.SetInt("diamond", diamond);
+                StockCheck[index] = true;
+                info[index].inStock = true;
+                priceText.text = "ÂÛÁÐÀÒÜ";
+                Save();
+            }
+        }
+        if (buyBttn.interactable && !info[index].inStock && !info[index].sell_diamond)
         {
             if (coins >= int.Parse(priceText.text))
             {

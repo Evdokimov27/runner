@@ -12,7 +12,7 @@ public class Card : MonoBehaviour
     public Button[] openCard;
 
     public int ind;
-    public Text coinsText;
+    [SerializeField] public Text coinsText;
     public int coins;
     public int diamond;
     [SerializeField] public Text diamondText;
@@ -26,13 +26,16 @@ public class Card : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coins = PlayerPrefs.GetInt("coins");
-        diamond = PlayerPrefs.GetInt("diamond");
+        
     }
 
     // Update is called once per frame
     void Update()
-    { 
+    {
+        coins = PlayerPrefs.GetInt("coins");
+        diamond = PlayerPrefs.GetInt("diamond");
+        coinsText.text = coins.ToString();
+        diamondText.text = diamond.ToString();
         for (int index = 0; index < 9; index++)
             if (!openCard[index].IsInteractable())
             {
@@ -58,6 +61,8 @@ public class Card : MonoBehaviour
 
     public void Click(int index)
     {
+        coins = PlayerPrefs.GetInt("coins");
+        diamond = PlayerPrefs.GetInt("diamond");
         ind = index;
         cardOpen = (ulong)DateTime.Now.Ticks;
         PlayerPrefs.SetString("cartOpen", cardOpen.ToString());
