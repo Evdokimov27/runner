@@ -21,8 +21,8 @@ public class SkinShop : MonoBehaviour
     public static int index;
 
 
-    public int coins;
-    public int diamond;
+    public static int coins;
+    public static int diamond;
 
 
 
