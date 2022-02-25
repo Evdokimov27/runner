@@ -16938,11 +16938,11 @@ MonoBehaviour:
     inStock: 0
     isChosen: 0
     dailyReward: 0
-  close: {fileID: 0}
-  buyBttn: {fileID: 0}
-  priceText: {fileID: 0}
+  close: {fileID: 1464522717}
+  buyBttn: {fileID: 1755479233}
+  priceText: {fileID: 1281458632}
   coinsText: {fileID: 581574554}
-  player: {fileID: 0}
+  player: {fileID: 604284927}
   coins: 0
 --- !u!1 &315119730
 GameObject:
@@ -23559,10 +23559,10 @@ RectTransform:
   m_Father: {fileID: 652862844}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 535, y: -1140}
+  m_SizeDelta: {x: 350, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &452443984
 MonoBehaviour:
@@ -23611,11 +23611,11 @@ MonoBehaviour:
       - m_Target: {fileID: 587199458}
         m_TargetAssemblyTypeName: Card, Assembly-CSharp
         m_MethodName: Click
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -31074,7 +31074,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &587199457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31121,9 +31121,14 @@ MonoBehaviour:
   - {fileID: 2103070133}
   - {fileID: 452443984}
   - {fileID: 1835234653}
+  ind: 0
   coinsText: {fileID: 123150022}
   coins: 0
   diamond: 0
+  img_coin: {fileID: 21300000, guid: 8e4d9c3c0b8418a48a2a11c75313eed9, type: 3}
+  img_diamond: {fileID: 21300000, guid: fb10fdf98cb1a28438cdd4cd59ab02c4, type: 3}
+  background: {fileID: 21300000, guid: a84b44a46c33876429b307feaf925444, type: 3}
+  randomizer: 0
 --- !u!1001 &588777349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33846,11 +33851,11 @@ MonoBehaviour:
       - m_Target: {fileID: 587199458}
         m_TargetAssemblyTypeName: Card, Assembly-CSharp
         m_MethodName: Click
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -33908,10 +33913,10 @@ RectTransform:
   m_Father: {fileID: 652862844}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 180, y: -685}
+  m_SizeDelta: {x: 350, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &647201502
 GameObject:
@@ -34077,7 +34082,7 @@ MonoBehaviour:
     m_Bottom: 5
   m_ChildAlignment: 0
   m_StartCorner: 0
-  m_StartAxis: 1
+  m_StartAxis: 0
   m_CellSize: {x: 350, y: 450}
   m_Spacing: {x: 5, y: 5}
   m_Constraint: 0
@@ -34903,10 +34908,10 @@ RectTransform:
   m_Father: {fileID: 652862844}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 180, y: -230}
+  m_SizeDelta: {x: 350, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &675577451
 MonoBehaviour:
@@ -34959,7 +34964,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -37343,11 +37348,11 @@ MonoBehaviour:
       - m_Target: {fileID: 587199458}
         m_TargetAssemblyTypeName: Card, Assembly-CSharp
         m_MethodName: Click
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -37405,10 +37410,10 @@ RectTransform:
   m_Father: {fileID: 652862844}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 535, y: -685}
+  m_SizeDelta: {x: 350, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &727050706
 GameObject:
@@ -37476,11 +37481,11 @@ MonoBehaviour:
       - m_Target: {fileID: 587199458}
         m_TargetAssemblyTypeName: Card, Assembly-CSharp
         m_MethodName: Click
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -37538,10 +37543,10 @@ RectTransform:
   m_Father: {fileID: 652862844}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 890, y: -685}
+  m_SizeDelta: {x: 350, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &728144979
 GameObject:
@@ -42576,7 +42581,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -42634,10 +42639,10 @@ RectTransform:
   m_Father: {fileID: 652862844}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 535, y: -230}
+  m_SizeDelta: {x: 350, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &822619639
 GameObject:
@@ -67949,11 +67954,11 @@ MonoBehaviour:
       - m_Target: {fileID: 587199458}
         m_TargetAssemblyTypeName: Card, Assembly-CSharp
         m_MethodName: Click
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -68011,10 +68016,10 @@ RectTransform:
   m_Father: {fileID: 652862844}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 890, y: -230}
+  m_SizeDelta: {x: 350, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1337619457
 GameObject:
@@ -92372,10 +92377,10 @@ RectTransform:
   m_Father: {fileID: 652862844}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 890, y: -1140}
+  m_SizeDelta: {x: 350, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1835234653
 MonoBehaviour:
@@ -92424,11 +92429,11 @@ MonoBehaviour:
       - m_Target: {fileID: 587199458}
         m_TargetAssemblyTypeName: Card, Assembly-CSharp
         m_MethodName: Click
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -103842,11 +103847,11 @@ MonoBehaviour:
       - m_Target: {fileID: 587199458}
         m_TargetAssemblyTypeName: Card, Assembly-CSharp
         m_MethodName: Click
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 6
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -103904,10 +103909,10 @@ RectTransform:
   m_Father: {fileID: 652862844}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 180, y: -1140}
+  m_SizeDelta: {x: 350, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2103487358
 PrefabInstance:
