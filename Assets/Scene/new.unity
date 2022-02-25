@@ -6685,7 +6685,7 @@ RectTransform:
   m_GameObject: {fileID: 123150020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.65768, y: 6.65768, z: 6.65768}
+  m_LocalScale: {x: 0.8493203, y: 0.8493203, z: 0.8493203}
   m_Children:
   - {fileID: 253398337}
   m_Father: {fileID: 587199457}
@@ -6693,8 +6693,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -153, y: -584}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 31, y: -492}
+  m_SizeDelta: {x: 1190.481, y: 571.8986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &123150022
 MonoBehaviour:
@@ -6718,11 +6718,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 140
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 140
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -13279,15 +13279,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245571605}
   m_LocalRotation: {x: -0, y: 0.030434012, z: -0, w: -0.99953675}
-  m_LocalPosition: {x: 0, y: 0, z: 4.205669}
-  m_LocalScale: {x: 0.1955855, y: 0.8414774, z: 0.1955855}
+  m_LocalPosition: {x: 0, y: 0, z: 32.967533}
+  m_LocalScale: {x: 1.5331619, y: 6.596201, z: 1.5331619}
   m_Children: []
   m_Father: {fileID: 610860578}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.77298, y: 3.5810394}
+  m_AnchoredPosition: {x: 168.95874, y: 62.216095}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &245571607
@@ -13819,17 +13819,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccad090bd09432c47b2184094a3f6c3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _showAdButton:
-  - {fileID: 1864972541}
-  - {fileID: 675577451}
-  - {fileID: 821847208}
-  - {fileID: 1336636719}
-  - {fileID: 646770022}
-  - {fileID: 725917236}
-  - {fileID: 727050707}
-  - {fileID: 2103070133}
-  - {fileID: 452443984}
-  - {fileID: 1835234653}
+  _showAdButton: []
   _androidAdUnitId: Rewarded_Android
   _iOSAdUnitId: Rewarded_iOS
 --- !u!114 &248048814
@@ -13844,7 +13834,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9aa1f38432235d48b30546d05eb949e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RewardButtons: []
+  RewardButtons:
+  - {fileID: 675577451}
+  - {fileID: 821847208}
+  - {fileID: 1336636719}
+  - {fileID: 646770022}
+  - {fileID: 725917236}
+  - {fileID: 727050707}
+  - {fileID: 2103070133}
+  - {fileID: 452443984}
+  - {fileID: 1835234653}
   _androidAdUnitId: Rewarded_Android
   _iOSAdUnitId: Rewarded_iOS
   time: {fileID: 587199456}
@@ -15879,8 +15878,8 @@ RectTransform:
   - {fileID: 1543491990}
   - {fileID: 1707814131}
   - {fileID: 1415329201}
-  - {fileID: 311278044}
   - {fileID: 587199457}
+  - {fileID: 311278044}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17094,7 +17093,7 @@ RectTransform:
   - {fileID: 1864972540}
   - {fileID: 942805715}
   m_Father: {fileID: 285955876}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -23936,8 +23935,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 248048813}
-        m_TargetAssemblyTypeName: RewardedAdsButton, Assembly-CSharp
+      - m_Target: {fileID: 248048814}
+        m_TargetAssemblyTypeName: RewardedAds, Assembly-CSharp
         m_MethodName: ShowAd
         m_Mode: 1
         m_Arguments:
@@ -31334,7 +31333,7 @@ RectTransform:
   - {fileID: 610860578}
   - {fileID: 652862844}
   m_Father: {fileID: 285955876}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -32651,17 +32650,17 @@ RectTransform:
   m_GameObject: {fileID: 610860577}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.6576815, y: 6.6576815, z: 6.6576815}
+  m_LocalScale: {x: 0.8493205, y: 0.8493205, z: 0.8493205}
   m_Children:
-  - {fileID: 245571606}
   - {fileID: 1597878996}
+  - {fileID: 245571606}
   m_Father: {fileID: 587199457}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.7998352, y: -92}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -7, y: -121}
+  m_SizeDelta: {x: 1209.2347, y: 282.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &610860579
 MonoBehaviour:
@@ -32685,11 +32684,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
+    m_FontSize: 140
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
+    m_MinSize: 1
+    m_MaxSize: 140
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -34199,8 +34198,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 248048813}
-        m_TargetAssemblyTypeName: RewardedAdsButton, Assembly-CSharp
+      - m_Target: {fileID: 248048814}
+        m_TargetAssemblyTypeName: RewardedAds, Assembly-CSharp
         m_MethodName: ShowAd
         m_Mode: 1
         m_Arguments:
@@ -35320,8 +35319,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 248048813}
-        m_TargetAssemblyTypeName: RewardedAdsButton, Assembly-CSharp
+      - m_Target: {fileID: 248048814}
+        m_TargetAssemblyTypeName: RewardedAds, Assembly-CSharp
         m_MethodName: ShowAd
         m_Mode: 1
         m_Arguments:
@@ -37801,8 +37800,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 248048813}
-        m_TargetAssemblyTypeName: RewardedAdsButton, Assembly-CSharp
+      - m_Target: {fileID: 248048814}
+        m_TargetAssemblyTypeName: RewardedAds, Assembly-CSharp
         m_MethodName: ShowAd
         m_Mode: 1
         m_Arguments:
@@ -37946,8 +37945,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 248048813}
-        m_TargetAssemblyTypeName: RewardedAdsButton, Assembly-CSharp
+      - m_Target: {fileID: 248048814}
+        m_TargetAssemblyTypeName: RewardedAds, Assembly-CSharp
         m_MethodName: ShowAd
         m_Mode: 1
         m_Arguments:
@@ -43059,8 +43058,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 248048813}
-        m_TargetAssemblyTypeName: RewardedAdsButton, Assembly-CSharp
+      - m_Target: {fileID: 248048814}
+        m_TargetAssemblyTypeName: RewardedAds, Assembly-CSharp
         m_MethodName: ShowAd
         m_Mode: 1
         m_Arguments:
@@ -44172,7 +44171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -44200,15 +44199,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.27596626
+      value: 2.1632533
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.27596626
+      value: 2.1632533
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.27596626
+      value: 2.1632533
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -44240,11 +44239,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -71.07153
+      value: -773.7617
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 39.758675
+      value: 203.33966
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -67175,7 +67174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -67202,6 +67201,18 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.1632535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.1632535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.1632535
+      objectReference: {fileID: 0}
+    - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -67219,23 +67230,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -101.56262
+      value: -790.0097
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 4.310898
+      value: 67.937164
       objectReference: {fileID: 0}
     - target: {fileID: 2689477181902755940, guid: 05d95ed6b5abfa449956a5486dac992b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -68214,7 +68225,7 @@ RectTransform:
   - {fileID: 522333389}
   - {fileID: 1245425456}
   m_Father: {fileID: 1598538142}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -68562,8 +68573,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 248048813}
-        m_TargetAssemblyTypeName: RewardedAdsButton, Assembly-CSharp
+      - m_Target: {fileID: 248048814}
+        m_TargetAssemblyTypeName: RewardedAds, Assembly-CSharp
         m_MethodName: ShowAd
         m_Mode: 1
         m_Arguments:
@@ -70991,7 +71002,7 @@ RectTransform:
   m_Children:
   - {fileID: 1386839890}
   m_Father: {fileID: 1598538142}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -81514,10 +81525,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 15.903262}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1383761416}
   - {fileID: 1329234158}
   - {fileID: 2069138186}
   - {fileID: 2026320016}
+  - {fileID: 1383761416}
   - {fileID: 1646095890}
   m_Father: {fileID: 1415329201}
   m_RootOrder: 0
@@ -93261,8 +93272,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 248048813}
-        m_TargetAssemblyTypeName: RewardedAdsButton, Assembly-CSharp
+      - m_Target: {fileID: 248048814}
+        m_TargetAssemblyTypeName: RewardedAds, Assembly-CSharp
         m_MethodName: ShowAd
         m_Mode: 1
         m_Arguments:
@@ -101129,7 +101140,7 @@ RectTransform:
   m_Children:
   - {fileID: 2042940908}
   m_Father: {fileID: 1598538142}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -103585,7 +103596,7 @@ RectTransform:
   m_Children:
   - {fileID: 1699574838}
   m_Father: {fileID: 1598538142}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -104952,8 +104963,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 248048813}
-        m_TargetAssemblyTypeName: RewardedAdsButton, Assembly-CSharp
+      - m_Target: {fileID: 248048814}
+        m_TargetAssemblyTypeName: RewardedAds, Assembly-CSharp
         m_MethodName: ShowAd
         m_Mode: 1
         m_Arguments:

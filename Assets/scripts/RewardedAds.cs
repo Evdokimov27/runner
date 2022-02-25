@@ -56,10 +56,7 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
             {
                 Debug.Log("Unity Ads Rewarded Ad Completed");
                 // Grant a reward.
-                coins += 5;
-                PlayerPrefs.SetInt("coins", coins);
-                diamond += 1;
-                PlayerPrefs.SetInt("diamond", diamond);
+               
                 // Load another ad:
                 Advertisement.Load(_adUnitId, this);
             }

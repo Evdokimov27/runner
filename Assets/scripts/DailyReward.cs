@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class Reward : MonoBehaviour
+public class DailyReward : MonoBehaviour
 {
     public float msToWait = 0f;
     public  Text Timer;
@@ -42,7 +42,9 @@ public class Reward : MonoBehaviour
     {
         lastOpen = ulong.Parse(PlayerPrefs.GetString("lastOpen"));
         coinsText.text = coins.ToString();
-        
+        diamondText.text = diamond.ToString();
+
+
         if (!rewardButton.IsInteractable())
         {
 

@@ -175,80 +175,79 @@ public class SkinShop : MonoBehaviour
         int day = PlayerPrefs.GetInt("day");
         if (day == 1)
         {
-            coins = 150;
+            coins += 15;
             coinsText.text = coins.ToString();
         }
         if (day == 2)
         {
-            coins = 200;
+            coins += 20;
             coinsText.text = coins.ToString();
 
         }
         if (day == 3)
         {
-            coins = 500;
+            coins += 50;
             coinsText.text = coins.ToString();
 
         }
         if (day == 4)
         {
-            coins = 750;
+            coins += 75;
             coinsText.text = coins.ToString();
 
         }
         if (day == 5)
         {
-            coins = 1000;
+            coins += 100;
             coinsText.text = coins.ToString();
         }
         if (day == 6)
         {
-            coins = 1250;
+            coins += 125;
             coinsText.text = coins.ToString();
         }
         if (day == 7)
         {
-            coins = 1500;
+            coins += 150;
             coinsText.text = coins.ToString();
         }
         if (day == 8)
         {
-            coins = 1750;
+            coins += 175;
             coinsText.text = coins.ToString();
         }
         if (day == 9)
         {
-            coins = 2000;
+            coins += 200;
             coinsText.text = coins.ToString();
         }
         if (day == 10)
         {
-            coins = 2500;
+            coins += 250;
             coinsText.text = coins.ToString();
         }
         if (day == 11)
         {
-            coins = 3000;
+            coins += 300;
             coinsText.text = coins.ToString();
         }
         if (day == 12)
         {
-            coins = 4000;
+            coins += 400;
             coinsText.text = coins.ToString();
         }
         if (day == 13)
         {
-            coins = 5000;
+            coins += 500;
             coinsText.text = coins.ToString();
         }
         if (day == 14)
         {
-            coins = 7500;
+            coins += 750;
             coinsText.text = coins.ToString();
         }
         if (day == 15)
         {
-            coins += 1;
             StockCheck[3] = true;
             info[3].inStock = true;
             Save();
