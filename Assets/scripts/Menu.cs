@@ -11,15 +11,13 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject Rewards;
     [SerializeField] private GameObject UI;
     [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject Cards;
     [SerializeField] private GameObject CameraMenu;
     [SerializeField] private Text coinsText;
     [SerializeField] private int coins;
 
     // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
+
     public void Play()
     {
         coins = PlayerPrefs.GetInt("coins");
@@ -31,7 +29,6 @@ public class Menu : MonoBehaviour
     }
     public void SkinShop()
     {
-        coins = PlayerPrefs.GetInt("coins");
         coinsText.text = coins.ToString();
         GameMenu.SetActive(false);
         Shop.SetActive(true);
@@ -49,12 +46,17 @@ public class Menu : MonoBehaviour
         coinsText.text = coins.ToString();
         GameMenu.SetActive(true);
         Shop.SetActive(false);
+        Rewards.SetActive(false);
 
 
     }
+    public void Card()
+    {
+        GameMenu.SetActive(false);
+        Cards.SetActive(true);
+    }
     public void DailyReward()
     {
-        coins = PlayerPrefs.GetInt("coins");
         GameMenu.SetActive(false);
         Rewards.SetActive(true);
 
@@ -66,6 +68,6 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        coins = PlayerPrefs.GetInt("coins");
     }
 }

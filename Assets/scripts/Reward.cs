@@ -9,6 +9,7 @@ public class Reward : MonoBehaviour
     private ulong lastOpen = ((ulong)1);
     public int day;
     public int coins;
+    public int diamond;
     public int streak;
     public Text coinsText;
     [SerializeField] private Button rewardButton;
