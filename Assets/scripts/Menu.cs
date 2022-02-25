@@ -14,7 +14,10 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject Cards;
     [SerializeField] private GameObject CameraMenu;
     [SerializeField] private Text coinsText;
+    [SerializeField] private Text diamondText;
     [SerializeField] private int coins;
+    [SerializeField] private int diamond;
+
 
     // Start is called before the first frame update
 

@@ -9,25 +9,31 @@ public class SkinShop : MonoBehaviour
     public Skin[] info;
     public static bool[] StockCheck;
     [SerializeField] private GameObject close;
+    [SerializeField] private Sprite img_coin;
+    [SerializeField] private Sprite img_diamond;
+    [SerializeField] private Sprite img_claim;
 
     public Button buyBttn;
     public Text priceText;
     public Text coinsText;
+    public Text diamondText;
     public Transform player;
     public static int index;
 
 
     public int coins;
+    public int diamond;
 
 
 
 
     private void Awake()
     {
-
+        diamond = PlayerPrefs.GetInt("diamond");
         coins = PlayerPrefs.GetInt("coins");
         index = PlayerPrefs.GetInt("chosenSkin");
         coinsText.text = coins.ToString();
+        diamondText.text = diamond.ToString();
 
         StockCheck = new bool[53];
         StockCheck = new bool[53];
@@ -75,24 +81,36 @@ public class SkinShop : MonoBehaviour
                 priceText.text = "¬€¡–¿Õ";
                 buyBttn.interactable = false;
                 close.SetActive(false);
+                buyBttn.image.sprite = img_claim;
             }
             else if (info[index].dailyReward && !info[index].inStock)
             {
                 priceText.text = "≈∆≈ƒÕ≈¬Õ¿ﬂ Õ¿√–¿ƒ¿".ToString();
                 buyBttn.interactable = false;
                 close.SetActive(true);
+                buyBttn.image.sprite = img_claim;
+            }
+            else if (info[index].sell_diamond && !info[index].inStock)
+            {
+                priceText.text = info[index].cost_diamond.ToString();
+                buyBttn.interactable = true;
+                close.SetActive(true);
+                buyBttn.image.sprite = img_diamond;
             }
             else if (!info[index].inStock)
             {
-                priceText.text = info[index].cost.ToString();
+                priceText.text = info[index].cost_coin.ToString();
                 buyBttn.interactable = true;
                 close.SetActive(true);
+                buyBttn.image.sprite = img_coin;
             }
+
             else if (info[index].inStock && !info[index].isChosen)
             {
                 priceText.text = "¬€¡–¿“‹";
                 buyBttn.interactable = true;
                 close.SetActive(false);
+                buyBttn.image.sprite = img_claim;
             }
 
             for (int i = 0; i < player.childCount; i++)
@@ -113,6 +131,7 @@ public class SkinShop : MonoBehaviour
                 priceText.text = "¬€¡–¿Õ";
                 buyBttn.interactable = false;
                 close.SetActive(false);
+                buyBttn.image.sprite = img_claim;
             }
 
             else if (info[index].dailyReward && !info[index].inStock)
@@ -120,19 +139,28 @@ public class SkinShop : MonoBehaviour
                 priceText.text = "≈∆≈ƒÕ≈¬Õ¿ﬂ Õ¿√–¿ƒ¿".ToString();
                 buyBttn.interactable = false;
                 close.SetActive(true);
+                buyBttn.image.sprite = img_claim;
+            }
+            else if (info[index].sell_diamond && !info[index].inStock)
+            {
+                priceText.text = info[index].cost_diamond.ToString();
+                buyBttn.interactable = true;
+                close.SetActive(true);
+                buyBttn.image.sprite = img_diamond;
             }
             else if (!info[index].inStock)
             {
-                priceText.text = info[index].cost.ToString();
+                priceText.text = info[index].cost_coin.ToString();
                 buyBttn.interactable = true;
                 close.SetActive(true);
-
+                buyBttn.image.sprite = img_coin;
             }
             else if (info[index].inStock && !info[index].isChosen)
             {
                 priceText.text = "¬€¡–¿“‹";
                 buyBttn.interactable = true;
                 close.SetActive(false);
+                buyBttn.image.sprite = img_claim;
             }
 
             for (int i = 0; i < player.childCount; i++)
@@ -266,7 +294,9 @@ public class SkinShop : MonoBehaviour
 [System.Serializable]
 public class Skin
 {
-    public int cost;
+    public int cost_coin;
+    public int cost_diamond;
+    public bool sell_diamond;
     public bool inStock;
     public bool isChosen;
     public bool dailyReward;

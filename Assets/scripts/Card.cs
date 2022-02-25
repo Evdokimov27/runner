@@ -15,6 +15,7 @@ public class Card : MonoBehaviour
     public Text coinsText;
     public int coins;
     public int diamond;
+    [SerializeField] public Text diamondText;
     private ulong cardOpen = ((ulong)1);
     [SerializeField] private Sprite img_coin;
     [SerializeField] private Sprite img_diamond;
@@ -26,6 +27,7 @@ public class Card : MonoBehaviour
     void Start()
     {
         coins = PlayerPrefs.GetInt("coins");
+        diamond = PlayerPrefs.GetInt("diamond");
     }
 
     // Update is called once per frame
@@ -67,15 +69,19 @@ public class Card : MonoBehaviour
         if (randomizer < 16)
         {
             openCard[index].image.sprite = img_diamond;
+            int[] reward_diamond = {1, 2, 3, 4, 5};
+            diamond += reward_diamond[new Random().Next(0, reward_diamond.Length)];
         }
         if (randomizer > 16)
         {
             openCard[index].image.sprite = img_coin;
-            int[] reward_coin = { 10, 20, 50, 100, 250, 500};
-            coins += reward_coin[new Random().Next(1, reward_coin.Length)];
+            int[] reward_coin = { 10, 20, 50, 75, 100, 125, 150, 175, 200, 225, 250};
+            coins += reward_coin[new Random().Next(0, reward_coin.Length)];
 
         }
-            for (int i = 0; i < 9; i++)
+        PlayerPrefs.SetInt("coins", coins);
+        PlayerPrefs.SetInt("diamond", diamond);
+        for (int i = 0; i < 9; i++)
             {
                 openCard[i].interactable = false;
             

@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private float gravity;
     [SerializeField] private int coins;
+    [SerializeField] public int diamond;
+    [SerializeField] private Text diamondText;
     [SerializeField] private GameObject losePanel;
     [SerializeField] private GameObject scoreText;
     [SerializeField] private Text coinsText;

@@ -17,7 +17,8 @@ public class Reward : MonoBehaviour
     [SerializeField] private Sprite dotn_claim;
     [SerializeField] private Sprite now_claim;
     [SerializeField] private Transform rewards;
-    [SerializeField] private Transform skin_reward; 
+    [SerializeField] private Transform skin_reward;
+    [SerializeField] private Text diamondText;
 
 
 
@@ -29,6 +30,7 @@ public class Reward : MonoBehaviour
         
         Timer = GetComponentInChildren<Text>();
         coins = PlayerPrefs.GetInt("coins");
+        diamond = PlayerPrefs.GetInt("diamond");
         day = PlayerPrefs.GetInt("day");
         streak = day;
         isReady();
