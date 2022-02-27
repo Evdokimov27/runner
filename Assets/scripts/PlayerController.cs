@@ -10,7 +10,6 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private Score score;
     private Vector3 dir;
-    [SerializeField] private Button Butt;
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float gravity;
@@ -125,11 +124,9 @@ public class PlayerController : MonoBehaviour
     {
         gravity = -50;
         dir.y = jumpForce;
-        anim.SetTrigger("isJumping");
         anim.SetTrigger("jump");
-        anim.SetBool("jumper", true);
         yield return new WaitForSeconds(1);
-        anim.SetBool("jumper", false);
+
         Player.GetComponent<Animator>().Rebind();
     }
 
@@ -201,13 +198,7 @@ public class PlayerController : MonoBehaviour
         controller.height = 4;
         isSliding = true;
         anim.SetBool("isRunning", false);
-        anim.SetTrigger("isSliding");
-        anim.SetTrigger("slide");
-
-        anim.SetBool("slider", true);
-        yield return new WaitForSeconds(1);
-        anim.SetBool("slider", false);
-        
+        anim.SetTrigger("slide");     
 
 
         yield return new WaitForSeconds(2/3);

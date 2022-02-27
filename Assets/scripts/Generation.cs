@@ -6,7 +6,7 @@ public class Generation : MonoBehaviour
 {
     public GameObject[] tilePrefabs;
     private List<GameObject> activeTiles = new List<GameObject>();
-    private float spawnPos = 0;
+    private float spawnPos = 150;
     private float tileLength = 253;
 
 
@@ -25,7 +25,7 @@ public class Generation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.position.z - 150 > spawnPos - (startTiles * tileLength))
+        if (player.position.z - 253 > spawnPos - (startTiles * tileLength))
         {
             SpawnTile(Random.Range(0, tilePrefabs.Length));
             DeleteTile();

@@ -31,7 +31,8 @@ public class LosePanel : MonoBehaviour
 
     public void ToMenu()
     {
-        SceneManager.LoadScene(1);
         Time.timeScale = 1;
+        SceneManager.LoadScene(1);
+
     }
 }
