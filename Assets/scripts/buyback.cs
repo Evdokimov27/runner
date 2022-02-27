@@ -18,17 +18,27 @@ public class buyback : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        diamond = PlayerPrefs.GetInt("diamond");
         txt_priceBuyback.text = priceBuyback.ToString();
     }
+    public void CheckDiamond()
+    {
+    if (diamond >= priceBuyback)
+        {
+            Buyback();
+        }
+    else
+        {
+            return;
+        }
+
+    }
+
 
     public void Buyback()
     {
-        if (diamond >= priceBuyback)
-        {
             diamond = diamond - priceBuyback;
-
             PlayerPrefs.SetInt("diamond", diamond);
             StartCoroutine(Player.GetComponent<PlayerController>().Reincornation());
-        }
     }
 }

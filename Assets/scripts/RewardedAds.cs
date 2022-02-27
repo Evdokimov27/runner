@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.UI;
@@ -5,9 +6,10 @@ using UnityEngine.UI;
 public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     public static RewardedAds S;
-    [SerializeField] Button[] RewardButtons;
-    [SerializeField] private Button Respawn;
+    [SerializeField] Button[] rewardButtons;
+    [SerializeField] private Button respawn;
     [SerializeField] private GameObject Player;
+    [SerializeField] private GameObject losePanel;
     [SerializeField] private string _androidAdUnitId = "Rewarded_Android";
     [SerializeField] private string _iOSAdUnitId = "Rewarded_iOS"; 
     private string _adUnitId;
@@ -51,7 +53,15 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
         Advertisement.Show(_adUnitId, this);
     }
 
+    private IEnumerator WaitAndStartRevive()
+    {
 
+
+        StartCoroutine(Player.GetComponent<PlayerController>().Reincornation());
+        Time.timeScale = 1;
+        Debug.Log("buyback test");
+        yield return new WaitForSeconds(2f);
+    }
     public void OnUnityAdsShowComplete(string adUnitId, UnityAdsShowCompletionState showCompletionState)
     {
             {
@@ -60,10 +70,9 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
                     if (clk_button == 9)
                     {
 
-                    StartCoroutine(Player.GetComponent<PlayerController>().Reincornation());
                     Time.timeScale = 1;
-                    Respawn.interactable = false;
-
+                    WaitAndStartRevive();
+                    respawn.interactable = false;
                     }
                     if (clk_button == 0)
                     {

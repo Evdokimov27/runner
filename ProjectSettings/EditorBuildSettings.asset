@@ -6,12 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: 
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Plugins/TypedScenes/Samples/SampleScene.unity
-    guid: 97af6757ab49dbe469bd2c7d091fc8a8
-  - enabled: 1
-    path: Assets/KinematicSoup/SceneFusion/Stand-Ins/Scene.unity
-    guid: 8616de8e750682e42b7cdc3857388e99
+    path: Assets/Scenes/Game.unity
+    guid: a197337405989764ebcd387ef90f8264
   m_configObjects: {}
