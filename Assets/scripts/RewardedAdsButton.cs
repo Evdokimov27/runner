@@ -5,7 +5,7 @@ using UnityEngine.Advertisements;
 
 public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
-    [SerializeField] private Button[] _showAdButton;
+    [SerializeField] private Button _showAdButton;
     [SerializeField] private string _androidAdUnitId = "Rewarded_Android";
     [SerializeField] private string _iOSAdUnitId = "Rewarded_iOS";
     
@@ -15,7 +15,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 
     private void Awake()
     {
-        clk_button = PlayerPrefs.GetInt("clk_button");
+
         diamond = PlayerPrefs.GetInt("diamond");
         // Get the Ad Unit ID for the current platform:
         _adUnitId = (Application.platform == RuntimePlatform.IPhonePlayer)
@@ -23,7 +23,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
             : _androidAdUnitId;
 
         //Disable button until ad is ready to show
-        _showAdButton[clk_button].interactable = false;
+        _showAdButton.interactable = false;
     }
 
     private void Start()
@@ -58,9 +58,9 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         if (adUnitId.Equals(_adUnitId))
         {
             // Configure the button to call the ShowAd() method when clicked:
-            _showAdButton[clk_button].onClick.AddListener(ShowAd);
+            _showAdButton.onClick.AddListener(ShowAd);
             // Enable the button for users to click:
-            _showAdButton[clk_button].interactable = true;
+            _showAdButton.interactable = true;
         }
     }
 
@@ -68,7 +68,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     public void ShowAd()
     {
         // Disable the button: 
-        _showAdButton[clk_button].interactable = false;
+        _showAdButton.interactable = false;
         // Then show the ad:
         Advertisement.Show(_adUnitId, this);
     }
@@ -81,10 +81,11 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
             Debug.Log("Unity Ads Rewarded Ad Completed");
 
 
-            PlayerPrefs.SetInt("diamond", diamond);
+
             // Load another ad:
             Advertisement.Load(_adUnitId, this);
         }
+
     }
 
     // Implement Load and Show Listener error callbacks:
@@ -106,6 +107,6 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
     private void OnDestroy()
     {
         // Clean up the button listeners:
-        _showAdButton[clk_button].onClick.RemoveAllListeners();
+        _showAdButton.onClick.RemoveAllListeners();
     }
 }

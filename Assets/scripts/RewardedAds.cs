@@ -6,13 +6,16 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
 {
     public static RewardedAds S;
     [SerializeField] Button[] RewardButtons;
+    [SerializeField] private Button Respawn;
+    [SerializeField] private GameObject Player;
     [SerializeField] private string _androidAdUnitId = "Rewarded_Android";
-    [SerializeField] private string _iOSAdUnitId = "Rewarded_iOS";
+    [SerializeField] private string _iOSAdUnitId = "Rewarded_iOS"; 
     private string _adUnitId;
     int coins;
     int diamond;
     [SerializeField] GameObject time;
     public static int clk_button;
+
 
     private void Awake()
     {
@@ -48,28 +51,32 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
         Advertisement.Show(_adUnitId, this);
     }
 
+
     public void OnUnityAdsShowComplete(string adUnitId, UnityAdsShowCompletionState showCompletionState)
     {
-        if (clk_button == 0)
-        {
-            if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
             {
-                Debug.Log("Unity Ads Rewarded Ad Completed");
-                // Grant a reward.
-               
+                if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
+                {
+                    if (clk_button == 9)
+                    {
+
+                    StartCoroutine(Player.GetComponent<PlayerController>().Reincornation());
+                    Time.timeScale = 1;
+                    Respawn.interactable = false;
+
+                    }
+                    if (clk_button == 0)
+                    {
+
+                    }
+            }
+        
+      
                 // Load another ad:
                 Advertisement.Load(_adUnitId, this);
             }
         }
-        if (clk_button == 1)
-            {
-                if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
-            {
-                new WaitForSeconds(1);
-                time.GetComponent<Card>().msToWait = 86399999;
-            }
-        }
-    }
+    
 
     public void OnUnityAdsAdLoaded(string adUnitId)
     {

@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private Score score;
     private Vector3 dir;
+    [SerializeField] private Button Butt;
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float gravity;
@@ -22,16 +23,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Score Score;
     [SerializeField] private Text maxScore;
     [SerializeField] private GameObject Player;
+    [SerializeField] private Image Immortal;
+    [SerializeField] private float fill;
 
     private bool isSliding;
-    private bool isImmortal;
+    [SerializeField] public bool isImmortal;
     private bool jump;
 
     private int lineToMove = 1;
     public float lineDistance = 4;
     private float maxSpeed = 110;
+
     void Start()
     {
+        fill = 0f;
         anim = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
         col = GetComponent<CapsuleCollider>();
@@ -45,7 +50,22 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        Immortal.fillAmount = fill;
+        
+        if (isImmortal == true && fill <= 1)
+        {
+            fill -= Time.deltaTime * 1/5;
+        }
+        if (isImmortal == false && fill <= 1)
+        {
+            fill += Time.deltaTime * 1 / 50;
+        }
 
+        if(SwipeController.tap)
+        {
+            if (fill >= 1)
+            StartCoroutine(ShieldBonus());
+        }
 
         if (SwipeController.swipeRight)
         {
@@ -156,6 +176,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.tag == "BonusShield")
         {
+            fill = 1;
             StartCoroutine(ShieldBonus());
             Destroy(other.gameObject);
         }
@@ -206,13 +227,24 @@ public class PlayerController : MonoBehaviour
 
         //score.scoreMultiplier = 1;
     }
-
-    private IEnumerator ShieldBonus()
+    
+    public IEnumerator Reincornation()
     {
+        Debug.Log("buyback'нулся)");
         isImmortal = true;
-
+        fill = 1;
+        losePanel.SetActive(false);
+        Time.timeScale = 1;
+        fill -= Time.deltaTime * 5;
         yield return new WaitForSeconds(5);
+        isImmortal = false;
 
+    }
+    public IEnumerator ShieldBonus()
+    { 
+        isImmortal = true;
+                fill -= Time.deltaTime * 5;
+        yield return new WaitForSeconds(5);
         isImmortal = false;
     }
 }
