@@ -72985,7 +72985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feae0c6e1d8d6ea43afb5009174e4945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  msToWait: 1000
+  msToWait: 10000
   Timer: {fileID: 1699574839}
   day: 1
   coins: 0
@@ -104199,7 +104199,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 229204234}
         m_TargetAssemblyTypeName: SkinShop, Assembly-CSharp
-        m_MethodName: RewardSkin
+        m_MethodName: DailyReward
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
