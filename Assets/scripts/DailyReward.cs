@@ -26,10 +26,9 @@ public class DailyReward : MonoBehaviour
     {
         PlayerPrefs.SetString("lastOpen", lastOpen.ToString());
         day = 0;
-        
-        
-        coins = PlayerPrefs.GetInt("coins");
-        diamond = PlayerPrefs.GetInt("diamond");
+        coinsText.text = coins.ToString();
+        diamondText.text = diamond.ToString();
+       
         day = PlayerPrefs.GetInt("day");
         streak = day;
         isReady();
@@ -41,6 +40,8 @@ public class DailyReward : MonoBehaviour
     void Update()
     {
         lastOpen = ulong.Parse(PlayerPrefs.GetString("lastOpen"));
+        coins = PlayerPrefs.GetInt("coins");
+        diamond = PlayerPrefs.GetInt("diamond");
         coinsText.text = coins.ToString();
         diamondText.text = diamond.ToString();
 
@@ -76,6 +77,8 @@ public class DailyReward : MonoBehaviour
     }
     public void UI()
     {
+        coinsText.text = coins.ToString();
+        diamondText.text = diamond.ToString();
         day = PlayerPrefs.GetInt("day");
         for (int n = 0; n < 15; n++)
         {

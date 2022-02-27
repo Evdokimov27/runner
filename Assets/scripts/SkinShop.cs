@@ -170,81 +170,78 @@ public class SkinShop : MonoBehaviour
         }
     }
 
-    public void RewardSkin()
+    public void DailyReward()
     {
         int day = PlayerPrefs.GetInt("day");
         if (day == 1)
         {
             coins += 15;
-            coinsText.text = coins.ToString();
+            
         }
         if (day == 2)
         {
             coins += 20;
-            coinsText.text = coins.ToString();
-
+            
         }
         if (day == 3)
         {
-            coins += 50;
-            coinsText.text = coins.ToString();
-
+            diamond += 1;
+            
         }
         if (day == 4)
         {
-            coins += 75;
-            coinsText.text = coins.ToString();
-
+            coins += 50;
+            
         }
         if (day == 5)
         {
-            coins += 100;
-            coinsText.text = coins.ToString();
+            diamond += 1;
+            
         }
         if (day == 6)
         {
-            coins += 125;
-            coinsText.text = coins.ToString();
+            coins += 100;
+            
         }
         if (day == 7)
         {
             coins += 150;
-            coinsText.text = coins.ToString();
+            
         }
         if (day == 8)
         {
-            coins += 175;
-            coinsText.text = coins.ToString();
+            diamond += 3;
+            
         }
         if (day == 9)
         {
             coins += 200;
-            coinsText.text = coins.ToString();
+            
         }
         if (day == 10)
         {
-            coins += 250;
-            coinsText.text = coins.ToString();
+            diamond += 5;
+            
         }
         if (day == 11)
         {
-            coins += 300;
-            coinsText.text = coins.ToString();
+            diamond += 5;
+            
         }
         if (day == 12)
         {
-            coins += 400;
-            coinsText.text = coins.ToString();
+            coins += 300;
+            
         }
         if (day == 13)
         {
-            coins += 500;
-            coinsText.text = coins.ToString();
+            diamond += 10;
+            
         }
         if (day == 14)
         {
-            coins += 750;
-            coinsText.text = coins.ToString();
+            coins += 450;
+            
         }
         if (day == 15)
         {
@@ -253,7 +250,10 @@ public class SkinShop : MonoBehaviour
             Save();
             coinsText.text = coins.ToString();
         }
+        coinsText.text = coins.ToString();
+        diamondText.text = diamond.ToString();
         PlayerPrefs.SetInt("coins", coins);
+        PlayerPrefs.SetInt("diamond", diamond);
     }
     public void BuyButtonAction()
     {
