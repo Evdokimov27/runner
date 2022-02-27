@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         }
         if (isImmortal == false && fill <= 1)
         {
-            fill += Time.deltaTime * 1 / 50;
+            fill += Time.deltaTime * 1 / 2;
         }
 
         if(SwipeController.tap)
