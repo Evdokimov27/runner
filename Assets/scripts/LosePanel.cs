@@ -6,32 +6,25 @@ using UnityEngine.UI;
 
 public class LosePanel : MonoBehaviour
 {
-    [SerializeField] Text recordText;
-    private void Start()
-    {
-        int lastRunScore = PlayerPrefs.GetInt("lastRunScore");
-        int recordScore = PlayerPrefs.GetInt("recordScore");
 
-        if (lastRunScore > recordScore)
-        {
-            recordScore = lastRunScore;
-            PlayerPrefs.SetInt("recordScore", recordScore);
-            recordText.text = "New Record: " + recordScore.ToString() ;
-        }
-        else
-        {
-            recordText.text = "Record: " + recordScore.ToString();
-        }
-    }
+    private int back = 0;
+
+    [SerializeField] private InterstitialAd Ads;
 
     public void RestartLevel()
     {
+        back = Random.Range(0, 5);
+        Debug.Log(back);
+        if (back == 0)
+        {
+            Ads.ShowAd();
+        }
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 
     public void ToMenu()
     {
-        Time.timeScale = 1;
         SceneManager.LoadScene(1);
     }
 }

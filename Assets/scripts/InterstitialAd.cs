@@ -21,6 +21,19 @@ public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
     }
 
     // Load content to the Ad Unit:
+    public void Ads()
+    {
+        int chance;
+        chance = Random.Range(0, 4);
+        Debug.Log(chance);
+
+        if (chance == 0)
+        {
+            ShowAd();
+        }
+    }
+    
+
     public void LoadAd()
     {
         // IMPORTANT! Only load content AFTER initialization (in this example, initialization is handled in a different script).

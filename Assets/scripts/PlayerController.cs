@@ -8,9 +8,11 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private CapsuleCollider col;
     private Animator anim;
-    private Score score;
     private Vector3 dir;
 
+
+    [SerializeField] private InterstitialAd Ads;
+    [SerializeField] private Score score;
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float gravity;
@@ -18,18 +20,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public int diamond;
     [SerializeField] private Text diamondText;
     [SerializeField] public GameObject losePanel;
-    [SerializeField] private GameObject scoreText;
     [SerializeField] private Text coinsText;
-    [SerializeField] private Score Score;
-    [SerializeField] private Text maxScore;
     [SerializeField] private GameObject Player;
     [SerializeField] private Image Immortal;
     [SerializeField] private GameObject Sheld;
     [SerializeField] private float fill;
-
-    private bool isSliding;
     [SerializeField] public bool isImmortal;
-    private bool jump;
+
 
     private int lineToMove = 1;
     public float lineDistance = 4;
@@ -41,7 +38,6 @@ public class PlayerController : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
         col = GetComponent<CapsuleCollider>();
-        score = scoreText.GetComponent<Score>();
         Time.timeScale = 1;
         coins = PlayerPrefs.GetInt("coins");
         coinsText.text = coins.ToString();
@@ -98,10 +94,6 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        if (controller.isGrounded && !isSliding)
-            anim.SetBool("isRunning", true);
-        else
-            anim.SetBool("isRunning", false);
 
         Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
         if (lineToMove == 0)
@@ -136,7 +128,7 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("jumper", true);
         yield return new WaitForSeconds(1);
         anim.SetBool("jumper", false);
-        Player.GetComponent<Animator>().Rebind();
+
     }
 
     void FixedUpdate()
@@ -154,12 +146,10 @@ public class PlayerController : MonoBehaviour
                 Destroy(hit.gameObject);
             else
             {
-                int lastRunScore = int.Parse(Score.scoreText.text.ToString());
-                PlayerPrefs.SetInt("lastRunScore", lastRunScore);
+
                 losePanel.SetActive(true);
                 Time.timeScale = 0;
-
-
+                score.Record();               
             }
         }
     }
@@ -200,29 +190,21 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Slide()
     {
+        anim.SetTrigger("slide");
+        yield return new WaitForSeconds(1/2);
         gravity = -150;
         col.center = new Vector3(0, 3f, 0f);
         col.height = 4;
         controller.center = new Vector3(0, 3f, 0f);
         controller.height = 4;
-        isSliding = true;
-        anim.SetBool("isRunning", false);
-        anim.SetTrigger("isSliding");
-        anim.SetTrigger("slide");
 
-        anim.SetBool("slider", true);
+
         yield return new WaitForSeconds(1);
-        anim.SetBool("slider", false);
-
-
-
-        yield return new WaitForSeconds(2 / 3);
 
         col.center = new Vector3(0, 3, 0);
         col.height = 6;
         controller.center = new Vector3(0, 3, 0);
         controller.height = 6;
-        isSliding = false;
     }
 
     private IEnumerator StarBonus()

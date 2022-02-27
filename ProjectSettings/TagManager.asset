@@ -6,6 +6,7 @@ TagManager:
   tags:
   - obstacle
   - Coin
+  - Anti Reboot
   layers:
   - Default
   - TransparentFX
