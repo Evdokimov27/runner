@@ -31,7 +31,7 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
             : _androidAdUnitId;
     }
 
-    
+    // Load content to the Ad Unit:
     public void LoadAd()
     {
         // IMPORTANT! Only load content AFTER initialization (in this example, initialization is handled in a different script).
@@ -67,11 +67,20 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
                 {
                 Debug.Log("Button: " + clk_button);
                 if (clk_button == 9)
-                {
+                    {
                     Time.timeScale = 1;
                     respawn.interactable = false;
+
                     WaitAndStartRevive();
                 }
+                    if (clk_button == 0)
+                    {
+
+                    }
+            
+        
+      
+                // Load another ad:
                 Advertisement.Load(_adUnitId, this);
             }
         }
