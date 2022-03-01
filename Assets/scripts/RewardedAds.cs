@@ -53,33 +53,23 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
         Advertisement.Show(_adUnitId, this);
     }
 
-    private IEnumerator WaitAndStartRevive()
-    {
-        yield return new WaitForSeconds(2f);
-        StartCoroutine(Player.GetComponent<PlayerController>().Reincornation());
-        Debug.Log("buyback test");
 
-    }
     public void OnUnityAdsShowComplete(string adUnitId, UnityAdsShowCompletionState showCompletionState)
     {
         Debug.Log("Реклама просмотренна");
         if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
                 {
-                Debug.Log("Button: " + clk_button);
+            Debug.Log("Button: " + clk_button);
                 if (clk_button == 9)
-                    {
-                    Time.timeScale = 1;
-                    respawn.interactable = false;
-
-                    WaitAndStartRevive();
+                {
+                Time.timeScale = 1;
+                respawn.interactable = false;
+                StartCoroutine(Player.GetComponent<PlayerController>().Reincornation());
                 }
-                    if (clk_button == 0)
-                    {
+                if (clk_button == 0)
+                {
 
-                    }
-            
-        
-      
+                }     
                 // Load another ad:
                 Advertisement.Load(_adUnitId, this);
             }
