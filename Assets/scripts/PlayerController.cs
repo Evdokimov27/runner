@@ -67,11 +67,7 @@ public class PlayerController : MonoBehaviour
             fill += Time.deltaTime * 1 / 2;
         }
 
-        if (SwipeController.tap)
-        {
-            if (fill >= 1)
-                StartCoroutine(ShieldBonus());
-        }
+
 
         if (SwipeController.swipeRight)
         {
@@ -255,5 +251,12 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(5);
         isImmortal = false;
         Sheld.SetActive(false);
+    }
+    public void CheckFill()
+    {
+        if (fill >= 1 && Time.timeScale !=0)
+        {
+            StartCoroutine(ShieldBonus());
+        }
     }
 }
