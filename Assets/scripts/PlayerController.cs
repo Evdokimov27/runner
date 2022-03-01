@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 dir;
 
     [SerializeField] private float speed;
+    [SerializeField] private int _timeSpeedUpSecond;
     [SerializeField] private float jumpForce;
     [SerializeField] private float gravity;
     [SerializeField] private int coins;
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Image Immortal;
     [SerializeField] private GameObject Sheld;
     [SerializeField] private float fill;
+
 
     private bool isSliding;
     [SerializeField] public bool isImmortal;
@@ -114,10 +116,7 @@ public class PlayerController : MonoBehaviour
         else
             controller.Move(diff);
 
-        if (speed <= 100)
-        {
-            speed += 0.1f * Time.deltaTime;
-        }
+
 
 
 
@@ -186,7 +185,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator SpeedIncrease()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(_timeSpeedUpSecond);
         if (speed < maxSpeed)
         {
             speed += 1;
