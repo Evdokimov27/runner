@@ -62,11 +62,12 @@ public class Menu : MonoBehaviour
     {
         GameMenu.SetActive(false);
         Rewards.SetActive(true);
-
-
-
     }
-
+    public void CloseDailyReward()
+    {
+        GameMenu.SetActive(true);
+        Rewards.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()

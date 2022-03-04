@@ -28,6 +28,12 @@ public class InterstitialAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
         Advertisement.Load(_adUnitId, this);
     }
 
+    public void RandomShow()
+    {
+        int Chance = Random.Range(0, 5);
+            if(Chance == 0)
+            ShowAd();
+    }
     // Show the loaded content in the Ad Unit: 
     public void ShowAd()
     {
