@@ -65,7 +65,8 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
                 Time.timeScale = 1;
                 respawn.interactable = false;
                 StartCoroutine(Player.GetComponent<PlayerController>().Reincornation());
-                }
+                Player.GetComponent<PlayerController>().ReincPos();
+            }
                 if (clk_button == 0)
                 {
 

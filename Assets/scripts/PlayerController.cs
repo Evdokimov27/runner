@@ -27,13 +27,16 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Image Immortal;
     [SerializeField] private GameObject Sheld;
     [SerializeField] private float fill;
+    [SerializeField] public Transform spawnPoint;
 
 
     private bool isSliding;
     [SerializeField] public bool isImmortal;
     private bool jump;
 
-    private int lineToMove = 1;
+    private int rightline = 3;
+    private int leftline = -1;
+    [SerializeField] private int lineToMove = 1;
     public float lineDistance = 4;
     private float maxSpeed = 110;
 
@@ -73,13 +76,13 @@ public class PlayerController : MonoBehaviour
 
         if (SwipeController.swipeRight)
         {
-            if (lineToMove < 2)
+            if (lineToMove < rightline)
                 lineToMove++;
         }
 
         if (SwipeController.swipeLeft)
         {
-            if (lineToMove > 0)
+            if (lineToMove > leftline)
                 lineToMove--;
         }
 
@@ -102,10 +105,14 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("isRunning", false);
 
         Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
-        if (lineToMove == 0)
+        if (lineToMove == -1)
+            targetPosition += 2 * Vector3.left * lineDistance;
+        else if (lineToMove == 0)
             targetPosition += Vector3.left * lineDistance;
         else if (lineToMove == 2)
             targetPosition += Vector3.right * lineDistance;
+        else if (lineToMove == 3)
+            targetPosition += 2 * Vector3.right * lineDistance;
 
         if (transform.position == targetPosition)
             return;
@@ -143,7 +150,20 @@ public class PlayerController : MonoBehaviour
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.tag == "obstacle")
+        if (hit.gameObject.tag == "down")
+        {
+            if (isImmortal)
+            {
+                ReincPos();
+            }
+            else {
+                int lastRunScore = int.Parse(Score.scoreText.text.ToString());
+                PlayerPrefs.SetInt("lastRunScore", lastRunScore);
+                losePanel.SetActive(true);
+                Time.timeScale = 0;
+            }
+        }
+        else if (hit.gameObject.tag == "obstacle")
         {
             if (isImmortal)
                 Destroy(hit.gameObject);
@@ -153,8 +173,6 @@ public class PlayerController : MonoBehaviour
                 PlayerPrefs.SetInt("lastRunScore", lastRunScore);
                 losePanel.SetActive(true);
                 Time.timeScale = 0;
-
-
             }
         }
     }
@@ -229,9 +247,13 @@ public class PlayerController : MonoBehaviour
         //score.scoreMultiplier = 1;
     }
 
+    public void ReincPos()
+    {
+        lineToMove = 1;
+        Player.transform.position = spawnPoint.transform.position; 
+    }
     public IEnumerator Reincornation()
     {
-        Debug.Log("Возрождение");
         Time.timeScale = 1;
         Sheld.SetActive(true);
         isImmortal = true;
