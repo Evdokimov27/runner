@@ -7223,6 +7223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6c9d10987d1e6c46b0de5d2e80832e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: {fileID: 1472268738}
   tilePrefabs:
   - {fileID: 1987862594}
   - {fileID: 424283319}
@@ -7230,7 +7231,13 @@ MonoBehaviour:
   - {fileID: 2065460464}
   - {fileID: 1997267422}
   - {fileID: 583386260}
+  eazyTilePrefabs:
+  - {fileID: 1192808672}
+  - {fileID: 985671579}
+  activeTiles: []
+  level: 0
   player: {fileID: 1312048009}
+  startTiles: 3
 --- !u!4 &284740133
 Transform:
   m_ObjectHideFlags: 0
@@ -35410,6 +35417,7 @@ MonoBehaviour:
   diamondText: {fileID: 804192294}
   coins: 0
   diamond: 0
+  int_score: 0
 --- !u!114 &1472268739
 MonoBehaviour:
   m_ObjectHideFlags: 0
