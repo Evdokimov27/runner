@@ -28,12 +28,9 @@ public class DailyReward : MonoBehaviour
         day = 0;
         coinsText.text = coins.ToString();
         diamondText.text = diamond.ToString();
-       
         day = PlayerPrefs.GetInt("day");
         streak = day;
         isReady();
-       
-
     }
 
     // Update is called once per frame

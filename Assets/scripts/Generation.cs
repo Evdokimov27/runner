@@ -28,9 +28,9 @@ public class Generation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (score.scoreText.text == "200")
+        if (score.scoreText.text == "10")
             level = 1;
-        if (score.scoreText.text == "350")
+        if (score.scoreText.text == "50")
             level = 2;
         if (player.position.z - 253 > spawnPos - (startTiles * tileLength))
         {

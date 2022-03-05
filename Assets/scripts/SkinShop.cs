@@ -53,7 +53,6 @@ public class SkinShop : MonoBehaviour
                 PlayerPrefs.SetInt("skin", i);
                 player.GetChild(i).gameObject.SetActive(true);
                 close.SetActive(false);
-
             }
             else
             {

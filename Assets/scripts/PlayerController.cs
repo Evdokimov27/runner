@@ -135,10 +135,7 @@ public class PlayerController : MonoBehaviour
         dir.y = jumpForce;
         anim.SetTrigger("isJumping");
         anim.SetTrigger("jump");
-        anim.SetBool("jumper", true);
-        yield return new WaitForSeconds(1);
-        anim.SetBool("jumper", false);
-        Player.GetComponent<Animator>().Rebind();
+        yield return new WaitForSeconds(0);
     }
 
     void FixedUpdate()
@@ -218,14 +215,10 @@ public class PlayerController : MonoBehaviour
         col.height = 4;
         controller.center = new Vector3(0, 3f, 0f);
         controller.height = 4;
-        isSliding = true;
-        anim.SetBool("isRunning", false);
-        anim.SetTrigger("isSliding");
+
         anim.SetTrigger("slide");
 
-        anim.SetBool("slider", true);
         yield return new WaitForSeconds(1);
-        anim.SetBool("slider", false);
 
 
 
@@ -235,7 +228,7 @@ public class PlayerController : MonoBehaviour
         col.height = 6;
         controller.center = new Vector3(0, 3, 0);
         controller.height = 6;
-        isSliding = false;
+
     }
 
     private IEnumerator StarBonus()
